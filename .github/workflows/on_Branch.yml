@@ -55,6 +55,8 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: maven
+      - name: Generate target folder
+        run: mvn test -Dtest=CalculatorControllerCalculationTests
       - name: Calculate code coverage
         run: mvn jacoco:report "-DskipTests" "-Ddependency-check.skip=true"
       - name: run commands
