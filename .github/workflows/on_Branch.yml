@@ -16,7 +16,7 @@ jobs:
           cache: maven  
       - name: Run unit tests
         run: mvn test -Dtest=CalculatorControllerCalculationTests
-  run_scan_dependency:
+  run_scan_vulnerability:
     runs-on: ubuntu-latest
     needs: run_code_coverage
     steps:
@@ -71,7 +71,7 @@ jobs:
           retention-days: 7
   build:
     runs-on: ubuntu-latest
-    needs: [run_unit_tests, run_scan_dependency, run_code_coverage]
+    needs: [run_unit_tests, run_scan_vulnerability, run_code_coverage]
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK 11
