@@ -4,7 +4,7 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 import org.junit.jupiter.api.Test; // Import JUnit Jupiter (JUnit 5) test annotation
 
-public class CalculatorTests {
+public class Calculator {
 
     @Test // Annotate the method as a JUnit test
     public void testAddition() {
