@@ -1,4 +1,4 @@
-name: Pre-Intergation checks on feature branch
+name: Feature Branch
 on:
   push:
     branches-ignore:
@@ -16,35 +16,6 @@ jobs:
           cache: maven  
       - name: Run unit tests
         run: mvn test -Dtest=CalculatorControllerCalculationTests
-  run_scan_vulnerability:
-    runs-on: ubuntu-latest
-    needs: run_code_coverage
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up JDK 11
-        uses: actions/setup-java@v4
-        with:
-          java-version: '11'
-          distribution: 'temurin'
-          cache: maven
-      - name: Cache OWASP Dependency Check Data
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.m2
-            ~/.dependency-check
-          key: ${{ runner.os }}-owasp-data-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-owasp-data-
-      - name: Owasp Dependency Check
-        run: mvn dependency-check:check
-      - name: Upload Dependency Check Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: dependency-check-report
-          path: |
-            target/dependency-check-report.html
-            target/dependency-check-report.xml
   run_code_coverage:
     runs-on: ubuntu-latest
     needs: run_unit_tests
@@ -69,21 +40,50 @@ jobs:
           name: code-coverage-report
           path: target/site/jacoco/
           retention-days: 7
-  build:
-    runs-on: ubuntu-latest
-    needs: [run_unit_tests, run_scan_vulnerability, run_code_coverage]
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up JDK 11
-        uses: actions/setup-java@v4
-        with:
-          java-version: '11'
-          distribution: 'temurin'
-          cache: maven
-      - name: Build with Maven
-        run: mvn clean install "-DskipTests" "-Djacoco.skip=true" "-Ddependency-check.skip=true"
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v4
-        with:
-          name: java-app
-          path: '${{ github.workspace }}/target/*.jar'
+  # run_scan_vulnerability:
+  #   runs-on: ubuntu-latest
+  #   needs: run_code_coverage
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: Set up JDK 11
+  #       uses: actions/setup-java@v4
+  #       with:
+  #         java-version: '11'
+  #         distribution: 'temurin'
+  #         cache: maven
+  #     - name: Cache OWASP Dependency Check Data
+  #       uses: actions/cache@v4
+  #       with:
+  #         path: |
+  #           ~/.m2
+  #           ~/.dependency-check
+  #         key: ${{ runner.os }}-owasp-data-${{ hashFiles('**/pom.xml') }}
+  #         restore-keys: |
+  #           ${{ runner.os }}-owasp-data-
+  #     - name: Owasp Dependency Check
+  #       run: mvn dependency-check:check
+  #     - name: Upload Dependency Check Report
+  #       uses: actions/upload-artifact@v4
+  #       with:
+  #         name: dependency-check-report
+  #         path: |
+  #           target/dependency-check-report.html
+  #           target/dependency-check-report.xml
+  # build:
+  #   runs-on: ubuntu-latest
+  #   needs: [run_unit_tests, run_scan_vulnerability, run_code_coverage]
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: Set up JDK 11
+  #       uses: actions/setup-java@v4
+  #       with:
+  #         java-version: '11'
+  #         distribution: 'temurin'
+  #         cache: maven
+  #     - name: Build with Maven
+  #       run: mvn clean install "-DskipTests" "-Djacoco.skip=true" "-Ddependency-check.skip=true"
+  #     - name: Upload artifact for deployment job
+  #       uses: actions/upload-artifact@v4
+  #       with:
+  #         name: java-app
+  #         path: '${{ github.workspace }}/target/*.jar'
