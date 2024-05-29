@@ -1,0 +1,941 @@
+{
+	"info": {
+		"_postman_id": "0e15216f-11fa-476f-8906-0b19a0cddd73",
+		"name": "FreeAPIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26738462"
+	},
+	"item": [
+		{
+			"name": "1. The Data USA API",
+			"item": [
+				{
+					"name": "Recent Population data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://datausa.io/api/data?drilldowns=Nation&measures=Population",
+							"protocol": "https",
+							"host": [
+								"datausa",
+								"io"
+							],
+							"path": [
+								"api",
+								"data"
+							],
+							"query": [
+								{
+									"key": "drilldowns",
+									"value": "Nation"
+								},
+								{
+									"key": "measures",
+									"value": "Population"
+								}
+							]
+						},
+						"description": "This API request gets population data at the national level in recent years.\n\nLink: [https://datausa.io/about/api/](https://datausa.io/about/api/)"
+					},
+					"response": [
+						{
+							"name": "Recent Population data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://datausa.io/api/data?drilldowns=Nation&measures=Population",
+									"protocol": "https",
+									"host": [
+										"datausa",
+										"io"
+									],
+									"path": [
+										"api",
+										"data"
+									],
+									"query": [
+										{
+											"key": "drilldowns",
+											"value": "Nation"
+										},
+										{
+											"key": "measures",
+											"value": "Population"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 23 Feb 2023 19:32:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "content-language",
+									"value": "en"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"5de-nIC6PX3cEGifOOBAdlSmcCVN9zA\""
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "last-modified",
+									"value": "Mon, 05 Dec 2022 21:02:20 GMT"
+								},
+								{
+									"key": "x-cache-status",
+									"value": "HIT"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET, POST, OPTIONS"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type"
+								},
+								{
+									"key": "x-cache-key",
+									"value": "GET/api/data?drilldowns=Nation&measures=Population"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=1800"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "HIT"
+								},
+								{
+									"key": "Age",
+									"value": "172319"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=qPkG06N8q%2BKKa1hjYLudI3Nj9mhJdprggBSqm5gwhXAGqlwmL0CO4HYdxrUGIW96LWK04CtMiIV0eol1ujcyLKYermyG%2FgjFzFFaUcxntahIjEc%2FBgiBrrjT3dI%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "79e262a96fa18c65-EWR"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"ID Nation\": \"01000US\",\n            \"Nation\": \"United States\",\n            \"ID Year\": 2020,\n            \"Year\": \"2020\",\n            \"Population\": 326569308,\n            \"Slug Nation\": \"united-states\"\n        },\n        {\n            \"ID Nation\": \"01000US\",\n            \"Nation\": \"United States\",\n            \"ID Year\": 2019,\n            \"Year\": \"2019\",\n            \"Population\": 324697795,\n            \"Slug Nation\": \"united-states\"\n        },\n        {\n            \"ID Nation\": \"01000US\",\n            \"Nation\": \"United States\",\n            \"ID Year\": 2018,\n            \"Year\": \"2018\",\n            \"Population\": 322903030,\n            \"Slug Nation\": \"united-states\"\n        },\n        {\n            \"ID Nation\": \"01000US\",\n            \"Nation\": \"United States\",\n            \"ID Year\": 2017,\n            \"Year\": \"2017\",\n            \"Population\": 321004407,\n            \"Slug Nation\": \"united-states\"\n        },\n        {\n            \"ID Nation\": \"01000US\",\n            \"Nation\": \"United States\",\n            \"ID Year\": 2016,\n            \"Year\": \"2016\",\n            \"Population\": 318558162,\n            \"Slug Nation\": \"united-states\"\n        },\n        {\n            \"ID Nation\": \"01000US\",\n            \"Nation\": \"United States\",\n            \"ID Year\": 2015,\n            \"Year\": \"2015\",\n            \"Population\": 316515021,\n            \"Slug Nation\": \"united-states\"\n        },\n        {\n            \"ID Nation\": \"01000US\",\n            \"Nation\": \"United States\",\n            \"ID Year\": 2014,\n            \"Year\": \"2014\",\n            \"Population\": 314107084,\n            \"Slug Nation\": \"united-states\"\n        },\n        {\n            \"ID Nation\": \"01000US\",\n            \"Nation\": \"United States\",\n            \"ID Year\": 2013,\n            \"Year\": \"2013\",\n            \"Population\": 311536594,\n            \"Slug Nation\": \"united-states\"\n        }\n    ],\n    \"source\": [\n        {\n            \"measures\": [\n                \"Population\"\n            ],\n            \"annotations\": {\n                \"source_name\": \"Census Bureau\",\n                \"source_description\": \"The American Community Survey (ACS) is conducted by the US Census and sent to a portion of the population every year.\",\n                \"dataset_name\": \"ACS 5-year Estimate\",\n                \"dataset_link\": \"http://www.census.gov/programs-surveys/acs/\",\n                \"table_id\": \"B01003\",\n                \"topic\": \"Diversity\",\n                \"subtopic\": \"Demographics\"\n            },\n            \"name\": \"acs_yg_total_population_5\",\n            \"substitutions\": []\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"description": "With this API you can access US Gov data on various industries and departments\n\nLink: [https://datausa.io/about/api/](https://datausa.io/about/api/to)"
+		},
+		{
+			"name": "2. NYC Parks & Rec Properties API",
+			"item": [
+				{
+					"name": "location of property",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://data.cityofnewyork.us/resource/enfh-gkve.json?location=100 St., 98 St. bet. 24 Ave. and 25 Ave.",
+							"protocol": "https",
+							"host": [
+								"data",
+								"cityofnewyork",
+								"us"
+							],
+							"path": [
+								"resource",
+								"enfh-gkve.json"
+							],
+							"query": [
+								{
+									"key": "location",
+									"value": "100 St., 98 St. bet. 24 Ave. and 25 Ave."
+								}
+							]
+						},
+						"description": "This request gets a description of the location of a property with respect to the street system and physical features such as water bodies.\n\nLink: [https://dev.socrata.com/foundry/data.cityofnewyork.us/enfh-gkve](https://dev.socrata.com/foundry/data.cityofnewyork.us/enfh-gkve)"
+					},
+					"response": [
+						{
+							"name": "location of property",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://data.cityofnewyork.us/resource/enfh-gkve.json?location=100 St., 98 St. bet. 24 Ave. and 25 Ave.",
+									"protocol": "https",
+									"host": [
+										"data",
+										"cityofnewyork",
+										"us"
+									],
+									"path": [
+										"resource",
+										"enfh-gkve.json"
+									],
+									"query": [
+										{
+											"key": "location",
+											"value": "100 St., 98 St. bet. 24 Ave. and 25 Ave."
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 Feb 2023 14:52:01 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "\"Y2hhcmxpZS42MzUyMV8xXzc0LUgzVE1sYlF3TTVNajZaUHVfNnNyaWZqcXNj---gzipsQwH3P0Uqpkh8kxwsY79HFkxrKY--gzip--gzip\""
+								},
+								{
+									"key": "X-SODA2-Fields",
+									"value": "[\"acquisitiondate\",\"acres\",\"address\",\"borough\",\"class\",\"communityboard\",\"councildistrict\",\"department\",\"eapply\",\"gisobjid\",\"gispropnum\",\"globalid\",\"jurisdiction\",\"location\",\"mapped\",\"name311\",\"nys_assembly\",\"nys_senate\",\"objectid\",\"omppropid\",\"parentid\",\"permit\",\"permitdistrict\",\"permitparent\",\"pip_ratable\",\"precinct\",\"retired\",\"signname\",\"subcategory\",\"typecategory\",\"url\",\"us_congress\",\"waterfront\",\"zipcode\",\"multipolygon\"]"
+								},
+								{
+									"key": "X-SODA2-Types",
+									"value": "[\"text\",\"number\",\"text\",\"text\",\"text\",\"number\",\"number\",\"text\",\"text\",\"number\",\"text\",\"text\",\"text\",\"text\",\"text\",\"text\",\"number\",\"number\",\"number\",\"text\",\"text\",\"boolean\",\"text\",\"text\",\"boolean\",\"number\",\"boolean\",\"text\",\"text\",\"text\",\"text\",\"number\",\"boolean\",\"number\",\"multipolygon\"]"
+								},
+								{
+									"key": "X-SODA2-Data-Out-Of-Date",
+									"value": "false"
+								},
+								{
+									"key": "X-SODA2-Truth-Last-Modified",
+									"value": "Wed, 11 Jan 2023 14:04:33 GMT"
+								},
+								{
+									"key": "X-SODA2-Secondary-Last-Modified",
+									"value": "Wed, 11 Jan 2023 14:04:33 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Wed, 11 Jan 2023 14:04:33 GMT"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Age",
+									"value": "0"
+								},
+								{
+									"key": "X-Socrata-Region",
+									"value": "aws-us-east-1-fedramp-prod"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Socrata-RequestId",
+									"value": "9b630f8b5bdca1bf7b596a07c884b940"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"acquisitiondate\": \"1951-08-09 00:00:00.0000000\",\n        \"acres\": \"3.827\",\n        \"address\": \"98-01 25 AVENUE\",\n        \"borough\": \"Q\",\n        \"class\": \"PARK\",\n        \"communityboard\": \"403\",\n        \"councildistrict\": \"21\",\n        \"department\": \"Q-03\",\n        \"eapply\": \"East Elmhurst Playground\",\n        \"gisobjid\": \"100000140\",\n        \"gispropnum\": \"Q373\",\n        \"globalid\": \"FE80558A-00B8-4825-95A5-2805EA0E0CEE\",\n        \"jurisdiction\": \"DPR/DOE\",\n        \"location\": \"100 St., 98 St. bet. 24 Ave. and 25 Ave.\",\n        \"mapped\": \"False\",\n        \"name311\": \"Helen Marshall Playground\",\n        \"nys_assembly\": \"35\",\n        \"nys_senate\": \"13\",\n        \"objectid\": \"4881\",\n        \"omppropid\": \"Q373\",\n        \"parentid\": \"Q-03\",\n        \"permit\": true,\n        \"permitdistrict\": \"Q-03\",\n        \"permitparent\": \"Q-03\",\n        \"pip_ratable\": true,\n        \"precinct\": \"115\",\n        \"retired\": false,\n        \"signname\": \"Helen Marshall Playground\",\n        \"subcategory\": \"JOP\",\n        \"typecategory\": \"Jointly Operated Playground\",\n        \"url\": \"http://www.nycgovparks.org/parks/Q373/\",\n        \"us_congress\": \"14\",\n        \"waterfront\": false,\n        \"zipcode\": \"11369\",\n        \"multipolygon\": {\n            \"type\": \"MultiPolygon\",\n            \"coordinates\": [\n                [\n                    [\n                        [\n                            -73.8702121052178,\n                            40.7662630696453\n                        ],\n                        [\n                            -73.87159149375225,\n                            40.766119156735826\n                        ],\n                        [\n                            -73.87154383479682,\n                            40.765855196258364\n                        ],\n                        [\n                            -73.87189254360733,\n                            40.765818813309885\n                        ],\n                        [\n                            -73.87180955940245,\n                            40.76535920237023\n                        ],\n                        [\n                            -73.87111215081137,\n                            40.76543199193358\n                        ],\n                        [\n                            -73.87100128360814,\n                            40.76481790537266\n                        ],\n                        [\n                            -73.86997221783915,\n                            40.76492355655017\n                        ],\n                        [\n                            -73.8702121052178,\n                            40.7662630696453\n                        ]\n                    ]\n                ]\n            ]\n        }\n    }\n]"
+						},
+						{
+							"name": "location of property",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://data.cityofnewyork.us/resource/enfh-gkve.json?location=100 St., 98 St. bet. 24 Ave. and 25 Ave.",
+									"protocol": "https",
+									"host": [
+										"data",
+										"cityofnewyork",
+										"us"
+									],
+									"path": [
+										"resource",
+										"enfh-gkve.json"
+									],
+									"query": [
+										{
+											"key": "location",
+											"value": "100 St., 98 St. bet. 24 Ave. and 25 Ave."
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 Feb 2023 14:52:01 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "\"Y2hhcmxpZS42MzUyMV8xXzc0LUgzVE1sYlF3TTVNajZaUHVfNnNyaWZqcXNj---gzipsQwH3P0Uqpkh8kxwsY79HFkxrKY--gzip--gzip\""
+								},
+								{
+									"key": "X-SODA2-Fields",
+									"value": "[\"acquisitiondate\",\"acres\",\"address\",\"borough\",\"class\",\"communityboard\",\"councildistrict\",\"department\",\"eapply\",\"gisobjid\",\"gispropnum\",\"globalid\",\"jurisdiction\",\"location\",\"mapped\",\"name311\",\"nys_assembly\",\"nys_senate\",\"objectid\",\"omppropid\",\"parentid\",\"permit\",\"permitdistrict\",\"permitparent\",\"pip_ratable\",\"precinct\",\"retired\",\"signname\",\"subcategory\",\"typecategory\",\"url\",\"us_congress\",\"waterfront\",\"zipcode\",\"multipolygon\"]"
+								},
+								{
+									"key": "X-SODA2-Types",
+									"value": "[\"text\",\"number\",\"text\",\"text\",\"text\",\"number\",\"number\",\"text\",\"text\",\"number\",\"text\",\"text\",\"text\",\"text\",\"text\",\"text\",\"number\",\"number\",\"number\",\"text\",\"text\",\"boolean\",\"text\",\"text\",\"boolean\",\"number\",\"boolean\",\"text\",\"text\",\"text\",\"text\",\"number\",\"boolean\",\"number\",\"multipolygon\"]"
+								},
+								{
+									"key": "X-SODA2-Data-Out-Of-Date",
+									"value": "false"
+								},
+								{
+									"key": "X-SODA2-Truth-Last-Modified",
+									"value": "Wed, 11 Jan 2023 14:04:33 GMT"
+								},
+								{
+									"key": "X-SODA2-Secondary-Last-Modified",
+									"value": "Wed, 11 Jan 2023 14:04:33 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Wed, 11 Jan 2023 14:04:33 GMT"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Age",
+									"value": "0"
+								},
+								{
+									"key": "X-Socrata-Region",
+									"value": "aws-us-east-1-fedramp-prod"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Socrata-RequestId",
+									"value": "9b630f8b5bdca1bf7b596a07c884b940"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"acquisitiondate\": \"1951-08-09 00:00:00.0000000\",\n        \"acres\": \"3.827\",\n        \"address\": \"98-01 25 AVENUE\",\n        \"borough\": \"Q\",\n        \"class\": \"PARK\",\n        \"communityboard\": \"403\",\n        \"councildistrict\": \"21\",\n        \"department\": \"Q-03\",\n        \"eapply\": \"East Elmhurst Playground\",\n        \"gisobjid\": \"100000140\",\n        \"gispropnum\": \"Q373\",\n        \"globalid\": \"FE80558A-00B8-4825-95A5-2805EA0E0CEE\",\n        \"jurisdiction\": \"DPR/DOE\",\n        \"location\": \"100 St., 98 St. bet. 24 Ave. and 25 Ave.\",\n        \"mapped\": \"False\",\n        \"name311\": \"Helen Marshall Playground\",\n        \"nys_assembly\": \"35\",\n        \"nys_senate\": \"13\",\n        \"objectid\": \"4881\",\n        \"omppropid\": \"Q373\",\n        \"parentid\": \"Q-03\",\n        \"permit\": true,\n        \"permitdistrict\": \"Q-03\",\n        \"permitparent\": \"Q-03\",\n        \"pip_ratable\": true,\n        \"precinct\": \"115\",\n        \"retired\": false,\n        \"signname\": \"Helen Marshall Playground\",\n        \"subcategory\": \"JOP\",\n        \"typecategory\": \"Jointly Operated Playground\",\n        \"url\": \"http://www.nycgovparks.org/parks/Q373/\",\n        \"us_congress\": \"14\",\n        \"waterfront\": false,\n        \"zipcode\": \"11369\",\n        \"multipolygon\": {\n            \"type\": \"MultiPolygon\",\n            \"coordinates\": [\n                [\n                    [\n                        [\n                            -73.8702121052178,\n                            40.7662630696453\n                        ],\n                        [\n                            -73.87159149375225,\n                            40.766119156735826\n                        ],\n                        [\n                            -73.87154383479682,\n                            40.765855196258364\n                        ],\n                        [\n                            -73.87189254360733,\n                            40.765818813309885\n                        ],\n                        [\n                            -73.87180955940245,\n                            40.76535920237023\n                        ],\n                        [\n                            -73.87111215081137,\n                            40.76543199193358\n                        ],\n                        [\n                            -73.87100128360814,\n                            40.76481790537266\n                        ],\n                        [\n                            -73.86997221783915,\n                            40.76492355655017\n                        ],\n                        [\n                            -73.8702121052178,\n                            40.7662630696453\n                        ]\n                    ]\n                ]\n            ]\n        }\n    }\n]"
+						}
+					]
+				}
+			],
+			"description": "This API provides access to property data managed partially or solely by NYC Parks.\n\n[https://dev.socrata.com/foundry/data.cityofnewyork.us/enfh-gkve](https://dev.socrata.com/foundry/data.cityofnewyork.us/enfh-gkve)"
+		},
+		{
+			"name": "3. Sunset and Sunrise Times API",
+			"item": [
+				{
+					"name": "Sunrise & Sunset times",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sunrisesunset.io/json?lat=38.907192&lng=-77.036873&timezone=UTC&date=today\nhttps://api.sunrisesunset.io/json?lat=38.907192&lng=-77.036873&timezone=UTC&date=1990-05-22",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sunrisesunset",
+								"io"
+							],
+							"path": [
+								"json"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "38.907192"
+								},
+								{
+									"key": "lng",
+									"value": "-77.036873"
+								},
+								{
+									"key": "timezone",
+									"value": "UTC"
+								},
+								{
+									"key": "date",
+									"value": "today\nhttps://api.sunrisesunset.io/json?lat=38.907192"
+								},
+								{
+									"key": "lng",
+									"value": "-77.036873"
+								},
+								{
+									"key": "timezone",
+									"value": "UTC"
+								},
+								{
+									"key": "date",
+									"value": "1990-05-22"
+								}
+							]
+						},
+						"description": "This request gets the current day's sunrise and sunset times  \n  \n  \nLink: [https://sunrisesunset.io/api/](https://sunrisesunset.io/api/)"
+					},
+					"response": [
+						{
+							"name": "Sunrise & Sunset times",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.sunrisesunset.io/json?lat=38.907192&lng=-77.036873&timezone=UTC&date=today\nhttps://api.sunrisesunset.io/json?lat=38.907192&lng=-77.036873&timezone=UTC&date=1990-05-22",
+									"protocol": "https",
+									"host": [
+										"api",
+										"sunrisesunset",
+										"io"
+									],
+									"path": [
+										"json"
+									],
+									"query": [
+										{
+											"key": "lat",
+											"value": "38.907192"
+										},
+										{
+											"key": "lng",
+											"value": "-77.036873"
+										},
+										{
+											"key": "timezone",
+											"value": "UTC"
+										},
+										{
+											"key": "date",
+											"value": "today\nhttps://api.sunrisesunset.io/json?lat=38.907192"
+										},
+										{
+											"key": "lng",
+											"value": "-77.036873"
+										},
+										{
+											"key": "timezone",
+											"value": "UTC"
+										},
+										{
+											"key": "date",
+											"value": "1990-05-22"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 24 Feb 2023 14:52:22 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "79e9065018f88cd6-EWR"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "s-max-age=480, max-age=480"
+								},
+								{
+									"key": "Link",
+									"value": "<https://sunrisesunset.io/wp-json/>; rel=\"https://api.w.org/\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "fastcgi-cache",
+									"value": "BYPASS"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-ua-compatible",
+									"value": "IE=edge"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=SoEv2xeXL4haxwtnKVcgL0HiNsl0byORf3mVZ%2FagRAkuk7mZhJLYrsc43NBtE3wZFVZboYO2CpJ0n%2FPXosyZSujyYJkIy6tLWSejRxbQyTqB8GGuIZzoTbSJoN0NM0epe6gGGkf9Xw%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"results\": {\n        \"sunrise\": \"9:52:03 AM\",\n        \"sunset\": \"12:20:22 AM\",\n        \"first_light\": \"8:01:33 AM\",\n        \"last_light\": \"2:10:52 AM\",\n        \"dawn\": \"9:21:29 AM\",\n        \"dusk\": \"12:50:56 AM\",\n        \"solar_noon\": \"5:06:12 PM\",\n        \"golden_hour\": \"11:41:50 PM\",\n        \"day_length\": \"14:28:19\",\n        \"timezone\": \"UTC\"\n    },\n    \"status\": \"OK\"\n}"
+						}
+					]
+				}
+			],
+			"description": "SunriseSunset.io offers a **free API** for retrieving sunrise and sunset times for a specific longitude and latitude.\n\nLink: [https://sunrisesunset.io/api/](https://sunrisesunset.io/api/)"
+		},
+		{
+			"name": "4. MusicBrainz API",
+			"item": [
+				{
+					"name": "Data on rock band Nirvana",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://musicbrainz.org/ws/2/artist/5b11f4ce-a62d-471e-81fc-a69a8278c7da?inc=aliases",
+							"protocol": "http",
+							"host": [
+								"musicbrainz",
+								"org"
+							],
+							"path": [
+								"ws",
+								"2",
+								"artist",
+								"5b11f4ce-a62d-471e-81fc-a69a8278c7da"
+							],
+							"query": [
+								{
+									"key": "inc",
+									"value": "aliases"
+								}
+							]
+						},
+						"description": "This request returns data for the rock band Nirvana\n\nLink: [https://musicbrainz.org/doc/MusicBrainz_API/Examples](https://musicbrainz.org/doc/MusicBrainz_API/Examples)"
+					},
+					"response": [
+						{
+							"name": "Data on rock band Nirvana",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://musicbrainz.org/ws/2/artist/5b11f4ce-a62d-471e-81fc-a69a8278c7da?inc=aliases",
+									"protocol": "http",
+									"host": [
+										"musicbrainz",
+										"org"
+									],
+									"path": [
+										"ws",
+										"2",
+										"artist",
+										"5b11f4ce-a62d-471e-81fc-a69a8278c7da"
+									],
+									"query": [
+										{
+											"key": "inc",
+											"value": "aliases"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 24 Feb 2023 14:52:42 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/xml; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=15"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1200"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "708"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1677250363"
+								},
+								{
+									"key": "Server",
+									"value": "Plack::Handler::Starlet"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"75154333f0383ff8792045ae48efb412\""
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Cache-Status",
+									"value": "MISS"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<metadata xmlns=\"http://musicbrainz.org/ns/mmd-2.0#\">\n    <artist id=\"5b11f4ce-a62d-471e-81fc-a69a8278c7da\" type=\"Group\" type-id=\"e431f5f6-b5d2-343d-8b36-72607fffb74b\">\n        <name>Nirvana</name>\n        <sort-name>Nirvana</sort-name>\n        <disambiguation>90s US grunge band</disambiguation>\n        <isni-list>\n            <isni>0000000123486830</isni>\n            <isni>0000000123487390</isni>\n        </isni-list>\n        <country>US</country>\n        <area id=\"489ce91b-6658-3307-9877-795b68554c98\">\n            <name>United States</name>\n            <sort-name>United States</sort-name>\n            <iso-3166-1-code-list>\n                <iso-3166-1-code>US</iso-3166-1-code>\n            </iso-3166-1-code-list>\n        </area>\n        <begin-area id=\"a640b45c-c173-49b1-8030-973603e895b5\">\n            <name>Aberdeen</name>\n            <sort-name>Aberdeen</sort-name>\n        </begin-area>\n        <life-span>\n            <begin>1988-01</begin>\n            <end>1994-04-05</end>\n            <ended>true</ended>\n        </life-span>\n        <alias-list count=\"3\">\n            <alias locale=\"en\" sort-name=\"Nirvana\" type=\"Artist name\" type-id=\"894afba6-2816-3c24-8072-eadb66bd04bc\" primary=\"primary\">Nirvana</alias>\n            <alias sort-name=\"Nirvana US\">Nirvana US</alias>\n            <alias locale=\"ja\" sort-name=\"ニルヴァーナ\" type=\"Artist name\" type-id=\"894afba6-2816-3c24-8072-eadb66bd04bc\" primary=\"primary\">ニルヴァーナ</alias>\n        </alias-list>\n    </artist>\n</metadata>"
+						}
+					]
+				}
+			],
+			"description": "With this API you can look up information about a particular MusicBrainz artist/group  \n(\"give me info about The Beatles\"), browse the data to find entities connected to a particular entity (\"show me all releases by The Beatles\"), or search for entities matching a specific query (\"show me  \nall artists matching the query 'Beatles' so I can find the one I want and ask for more data\").\n\nLink: [https://musicbrainz.org/doc/MusicBrainz_API](https://musicbrainz.org/doc/MusicBrainz_API)"
+		},
+		{
+			"name": "5. Universities API",
+			"item": [
+				{
+					"name": "University name and domain",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://universities.hipolabs.com/search?name=middle&country=turkey",
+							"protocol": "http",
+							"host": [
+								"universities",
+								"hipolabs",
+								"com"
+							],
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "middle"
+								},
+								{
+									"key": "country",
+									"value": "turkey"
+								}
+							]
+						},
+						"description": "This request gets a university name and domain given a search term and country\n\nLink: [https://github.com/Hipo/university-domains-list](https://github.com/Hipo/university-domains-list)"
+					},
+					"response": [
+						{
+							"name": "University name and domain",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://universities.hipolabs.com/search?name=middle&country=turkey",
+									"protocol": "http",
+									"host": [
+										"universities",
+										"hipolabs",
+										"com"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "middle"
+										},
+										{
+											"key": "country",
+											"value": "turkey"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 23 Feb 2023 22:17:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "185"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"domains\": [\n            \"metu.edu.tr\"\n        ],\n        \"name\": \"Middle East Technical University\",\n        \"web_pages\": [\n            \"http://www.metu.edu.tr/\"\n        ],\n        \"country\": \"Turkey\",\n        \"state-province\": null,\n        \"alpha_two_code\": \"TR\"\n    }\n]"
+						}
+					]
+				}
+			],
+			"description": "With this API you can get access data on a list of universities and their domain names\n\nExample usecases:\n\n- You can create a validation script that checks the email domain.\n- You can automatically generate a user's country and university by looking at their emails.\n    \n\n[https://github.com/Hipo/university-domains-list](https://github.com/Hipo/university-domains-list)"
+		}
+	]
+}
